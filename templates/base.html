@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}My Portfolio{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block head %}
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles/base_style.css') }}">
+        {% endblock %}
+    </head>
+<body>
+    <div class="accent-bar"></div>
+    <header>
+        {% if not hide_nav_footer %}
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">User Dashboard</a></li>
+                <li><a href="{{ url_for('index') }}">JK</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('hobbies') }}">Hobbies</a></li>
+                <li><a href="{{ url_for('profession') }}">Future Profession</a></li>
+                <li><a href="{{ url_for('food') }}">Food Delicacies</a></li>
+                <li><a href="{{ url_for('milestones') }}">School Milestones</a></li>
+                {% if session.get('user_id') %}
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% if not hide_nav_footer %}
+    <footer>
+        <p>&copy; 2025 JK's Portfolio</p>
+    </footer>
+    {% endif %}
+</body>
+</html>

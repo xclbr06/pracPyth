@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Food{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/food_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="food-title">My Favorite Food Delicacies</h1>
+<div class="food-desc">
+    Good food is a source of comfort and joy.
+    Here are 5 of my favorite foods and cuisines:
+</div>
+<div class="food-gallery">
+    <details class="food-details">
+        <summary class="food-summary">
+            <img src="{{ url_for('static', filename='foods/adobo.jpg') }}" alt="Adobo" class="food-img">
+            <div class="food-name">Adobo</div>
+        </summary>
+        <div class="food-details-content">
+            <strong>Adobo</strong> is a classic Filipino dish composed of pork slices cooked in soy sauce, vinegar, and garlic. 
+        </div>
+    </details>
+    <details class="food-details">
+        <summary class="food-summary">
+            <img src="{{ url_for('static', filename='foods/PManok.jpg') }}" alt="Pininyahang Manok" class="food-img">
+            <div class="food-name">Pininyahang Manok</div>
+        </summary>
+        <div class="food-details-content">
+            <strong>Pininyahang Manok</strong> This dish literally translates to pineapple chicken. This Recipe calls for chicken slices to be marinated in pineapple juice then stewed with pineapple chunks.
+        </div>
+    </details>
+    <details class="food-details">
+        <summary class="food-summary">
+            <img src="{{ url_for('static', filename='foods/sinigang.jpg') }}" alt="Sinigang" class="food-img">
+            <div class="food-name">Sinigang</div>
+        </summary>
+        <div class="food-details-content">
+            <strong>Sinigang</strong> is a sour soup made with pork, shrimp, or fish, flavored with tamarind and assorted vegetables.
+        </div>
+    </details>
+    <details class="food-details">
+        <summary class="food-summary">
+            <img src="{{ url_for('static', filename='foods/Fchicken.jpg') }}" alt="Fried Chicken" class="food-img">
+            <div class="food-name">Fried Chicken</div>
+        </summary>
+        <div class="food-details-content">
+            <strong>Fried Chicken</strong> is crispy and juicy chicken pieces deep-fried to golden perfection, a universal comfort food.
+        </div>
+    </details>
+    <details class="food-details">
+        <summary class="food-summary">
+            <img src="{{ url_for('static', filename='foods/kare.jpg') }}" alt="Kare-Kare" class="food-img">
+            <div class="food-name">Kare-Kare</div>
+        </summary>
+        <div class="food-details-content">
+            <strong>Kare-Kare</strong> is a traditional Filipino stew with oxtail, vegetables, and a rich peanut sauce, often served with bagoong (shrimp paste).
+        </div>
+    </details>
+</div>
+{% endblock %}

@@ -1,0 +1,101 @@
+.food-title {
+    text-align: center;
+    color: #ff4655;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.food-desc {
+    color: #ece8e1;
+    font-size: 1.08rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.food-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.food-img-card {
+    background: rgba(31, 35, 38, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(255,70,85,0.10);
+    width: 250px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+    border: 2px solid transparent;
+    padding: 0;
+    text-align: center;
+    cursor: default;
+}
+
+.food-img-card:hover {
+    box-shadow: 0 8px 32px rgba(255,70,85,0.18);
+    border-color: #ff4655;
+    transform: translateY(-4px) scale(1.04);
+}
+
+.food-img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.food-name {
+    font-size: 0.98rem;
+    color: #ff4655;
+    font-weight: bold;
+    margin: 0.7rem 0 0.7rem 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 0.3rem;
+    min-height: 2.2em;
+}
+
+.food-details {
+    background: rgba(31, 35, 38, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(255,70,85,0.10);
+    width: 250px;
+    margin: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid transparent;
+    transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+}
+
+.food-details[open] {
+    box-shadow: 0 8px 32px rgba(255,70,85,0.18);
+    border-color: #ff4655;
+    transform: translateY(-4px) scale(1.04);
+}
+
+.food-summary {
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    background: none;
+    border: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.food-details-content {
+    padding: 1rem;
+    color: #ece8e1;
+    text-align: left;
+}

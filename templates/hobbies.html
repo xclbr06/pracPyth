@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+
+{% block title %}Hobbies{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/hobbies_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="hobbies-title">My Main Hobbies</h1>
+<form class="hobbies-form">
+    <input type="radio" name="hobby" id="hobby-games" class="hobby-radio" checked>
+    <input type="radio" name="hobby" id="hobby-movies" class="hobby-radio">
+    <input type="radio" name="hobby" id="hobby-gym" class="hobby-radio">
+
+    <div class="hobbies-container">
+        <label for="hobby-games" class="hobby-card">
+            <img src="{{ url_for('static', filename='hobbies/valo.jpg') }}" alt="Video Games" class="hobby-img">
+            <div class="hobby-label">Video Games</div>
+        </label>
+        <label for="hobby-movies" class="hobby-card">
+            <img src="{{ url_for('static', filename='hobbies/shin.jpg') }}" alt="Watching Movies/Series" class="hobby-img">
+            <div class="hobby-label">Watching Movies/Series</div>
+        </label>
+        <label for="hobby-gym" class="hobby-card">
+            <img src="{{ url_for('static', filename='hobbies/gym.png') }}" alt="Gym Workout" class="hobby-img">
+            <div class="hobby-label">Gym Workout</div>
+        </label>
+    </div>
+
+    <div class="hobby-details-group">
+        <div class="hobby-detail" id="detail-games">
+            I love playing <span class="highlight">competitive, cooperative, and singleplayer video games</span>.<br>
+            They help me develop <span class="highlight">strategic thinking, teamwork, and quick reflexes.</span><br>
+            My favorite game genre is <span class="highlight">FPS (First Person Shooter)</span>.<br>
+            My favorite Online Game is <span class="highlight">Valorant</span>.<br><br>
+            <span class="video-caption-above">Here is an old highlights video clip of my gameplay:</span>
+            <video class="hobby-video" controls width="100%" poster="{{ url_for('static', filename='valo.jpg') }}">
+                <source src="{{ url_for('static', filename='vids/oldValoClips.mp4') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <span class="video-caption-below">
+                For more highlights, Check out my youtube channel 
+                <a href="https://www.youtube.com/@xclbrd8273" target="_blank" class="highlight-link">here!</a>
+            </span>
+            <div class="peak-rank-info">
+                <span class="peak-rank-label">Peak Rank: <span class="highlight">Immortal 1</span></span><br>
+                <img src="{{ url_for('static', filename='misc/immo.png') }}" alt="Immortal 1 Rank Logo" class="peak-rank-logo">
+            </div>
+        </div>
+        <div class="hobby-detail" id="detail-movies">
+            <div class="movies-desc">
+                Watching <span class="highlight">movies/series</span> is one of my ways to relax and explore stories which piques my interest.<br><br>
+                Here are some of my favorite movies/series of all time:
+            </div>
+            <div class="movies-gallery">
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/raid.jpg') }}" alt="The Raid" class="movie-img">
+                    <div class="movie-title">The Raid</div>
+                </div>
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/86.jpg') }}" alt="EIGHTY-SIX" class="movie-img">
+                    <div class="movie-title">EIGHTY-SIX</div>
+                </div>
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/KKid.jpg') }}" alt="The Karate Kid (2010)" class="movie-img">
+                    <div class="movie-title">The Karate Kid (2010)</div>
+                </div>
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/naruto.jpg') }}" alt="Naruto" class="movie-img">
+                    <div class="movie-title">Naruto</div>
+                </div>
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/AC.jpg') }}" alt="Assasination Classroom" class="movie-img">
+                    <div class="movie-title">Assasination Classroom</div>
+                </div>
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/MH.jpg') }}" alt="Money Heist" class="movie-img">
+                    <div class="movie-title">Money Heist</div>
+                </div>
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/RS.jpg') }}" alt="Real Steel" class="movie-img">
+                    <div class="movie-title">Real Steel</div>
+                </div>
+                <div class="movie-img-card">
+                    <img src="{{ url_for('static', filename='movies/cars.jpg') }}" alt="Cars" class="movie-img">
+                    <div class="movie-title">Cars</div>
+                </div>
+            </div>
+        </div>
+        <div class="hobby-detail" id="detail-gym">
+            <div class="gym-desc">
+                Going to the <span class="highlight">gym</span> keeps me <span class="highlight">healthy and motivated</span>.<br>
+                I follow the <span class="highlight">Push, Pull, and Legs Program</span> with hints of <span class="highlight">Cardio Exercises</span> in between.<br><br>
+                Here is my workout routine:
+            </div>
+            <div class="gym-gallery">
+                <div class="gym-img-card">
+                    <img src="{{ url_for('static', filename='gym/push.jpg') }}" alt="Push Day" class="movie-img">
+                    <div class="gym-title">Push Day<br><span class="gym-subtitle">Chest, Shoulders, and Triceps</span></div>
+                </div>
+                <div class="gym-img-card">
+                    <img src="{{ url_for('static', filename='gym/pull.jpeg') }}" alt="Pull Day" class="movie-img">
+                    <div class="gym-title">Pull Day<br><span class="gym-subtitle">Back and Biceps</span></div>
+                </div>
+                <div class="gym-img-card">
+                    <img src="{{ url_for('static', filename='gym/legs.jpg') }}" alt="Legs and Core" class="movie-img">
+                    <div class="gym-title">Legs and Core<br><span class="gym-subtitle">Lower Body and Core itself</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

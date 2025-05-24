@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}About Me{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/about_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="about-hero">
+    <div class="about-avatar">
+        <img src="{{ url_for('static', filename='me/JK.png') }}" alt="Justin Kylle G. Mariñas" class="about-img">
+    </div>
+    <div class="about-details">
+        <h1 class="about-name">Justin Kylle G. Mariñas</h1>
+        <p class="about-desc">
+            Hello! I'm <span class="highlight">Justin Kylle G. Mariñas</span>, currently studying at <span class="highlight">Mabalacat City College</span> as a <span class="highlight">BSIT-2A</span> student.<br><br>
+            My expertise lies in <span class="highlight">PC Software, Hardware and Network troubleshooting</span>, where I enjoy solving technical and physical challenges.<br><br>
+            <span class="about-motto">"It's about the journey, not just the destination."</span>
+        </p>
+        <div class="about-socials">
+            <a href="https://www.facebook.com/3xCLBR" class="social-btn" target="_blank" rel="noopener" title="Facebook">
+                <img src="{{ url_for('static', filename='logos/facebook.svg') }}" alt="Facebook" class="social-icon">
+            </a>
+            <a href="https://www.youtube.com/@xclbrd8273" class="social-btn" target="_blank" rel="noopener" title="YouTube">
+                <img src="{{ url_for('static', filename='logos/youtube.svg') }}" alt="YouTube" class="social-icon">
+            </a>
+            <a href="https://mcc.edu.ph/" class="social-btn" target="_blank" rel="noopener" title="MCC School">
+                <img src="{{ url_for('static', filename='logos/school.svg') }}" alt="MCC School" class="social-icon">
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

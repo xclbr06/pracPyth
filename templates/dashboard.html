@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/dashboard_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h2>Welcome, {{ user[1] }} {{ user[2] }}!</h2>
+    <div class="user-info">
+        <p><strong>Full Name:</strong> {{ user[1] }} {{ user[2] }}</p>
+        <p><strong>Course:</strong> {{ user[3] }}</p>
+        <p><strong>Section:</strong> {{ user[4] }}</p>
+        <p><strong>Email:</strong> {{ user[5] }}</p>
+        <div>
+            <a href="{{ url_for('logout') }}" class="dashboard-btn">Logout</a>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}

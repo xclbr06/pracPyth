@@ -1,0 +1,35 @@
+
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="home-wrapper">
+    <div class="home-hero">
+        <div class="home-avatar">
+            <img src="{{ url_for('static', filename='me/JK.png') }}" alt="Profile Avatar" class="avatar-img">
+        </div>
+        <div class="home-intro">
+            <h1 class="home-name">
+                Justin Kylle G. Mariñas
+            </h1>
+            <h2 class="home-role">
+                BSIT-2A Student
+            </h2>
+            <p class="home-desc">
+                Welcome to my <span class="highlight">Portfolio</span>! <br><br>
+                Explore and learn more <span class="highlight">about me</span>, my <span class="highlight">interests</span>, and <span class="highlight">
+                    achievements</span> as we become the <span class="highlight">radiants</span> of our world.
+            </p>
+            <a href="{{ url_for('about') }}" class="home-btn">
+                Learn More About Me
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

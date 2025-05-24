@@ -1,0 +1,74 @@
+.form-container {
+    background: rgba(31,35,38,0.95);
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    color: #ece8e1;
+}
+.form-container h2 {
+    color: #ff4655;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px;
+}
+.form-container label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"],
+.form-container select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background: #23272b;
+    color: #ece8e1;
+    font-size: 1.1rem;
+    display: block;
+}
+.form-container input[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    background: #ff4655;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+.form-container input[type="submit"]:hover {
+    background: #d13a47;
+}
+.form-container .message {
+    color: #ff4655;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.form-container p {
+    text-align: center;
+}
+.form-container a {
+    color: #ff4655;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    color: #ff46567c;
+    text-decoration: none;
+}
+
+.success-message {
+    color: #00ffae;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+

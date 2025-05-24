@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}School Milestones{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/milestones_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="milestones-hero">
+    <h1 class="milestones-title">School Milestones</h1>
+    <div class="milestones-section">
+        <h2 class="milestones-subtitle">Elementary</h2>
+        <ul class="milestones-list">
+            <li>3rd Place Radio Broadcasting <span class="highlight">Class of 2015 - 2016</span></li>
+            <li>2nd Place Desktop Publishing <span class="highlight">Class of 2016 - 2017</span></li>
+        </ul>
+    </div>
+    <div class="milestones-section">
+        <h2 class="milestones-subtitle">Junior High School</h2>
+        <ul class="milestones-list">
+            <li>JHS Academic Excellence Awardee (With Honors) <span class="highlight">Classes of 2017-2021</span></li>
+        </ul>
+    </div>
+    <div class="milestones-section">
+        <h2 class="milestones-subtitle">Senior High School</h2>
+        <ul class="milestones-list">
+            <li>1st Place CFSI SHS Quiz Bee <span class="highlight">Class of 2021-2022</span></li>
+            <li>SHS Academic Excellence Awardee (With High Honors) <span class="highlight">Class of 2021-2022</span></li>
+        </ul>
+    </div>
+    <div class="milestones-section">
+        <h2 class="milestones-subtitle">College</h2>
+        <ul class="milestones-list">
+            <li><span class="highlight">1st year</span><br><span class="milestone-detail">President Lister (2nd Semestral)</span></li>
+            <li><span class="highlight">2nd year</span><br><span class="milestone-detail">President Lister (1st Semestral)</span></li>
+        </ul>
+    </div>
+    <div class="milestones-section">
+        <h2 class="milestones-subtitle">Badges and Certificates</h2>
+        <p class="milestone-cert">
+            <a href="https://www.credly.com/users/justin-kylle-marinas" target="_blank" class="milestone-link">View my Credly badges and certificates &rarr;</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

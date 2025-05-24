@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Future Profession{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/profession_style.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="profession-hero">
+    <div class="profession-avatar">
+        <img src="{{ url_for('static', filename='me/cyber.jpg') }}" alt="Profession Photo" class="profession-img">
+    </div>
+    <div class="profession-details">
+        <div class="profession-main">
+            <span class="highlight">Cybersecurity Specialist</span> <br>
+            <span class="profession-or">or</span> <br>
+            <span class="highlight">Network Engineer</span>
+        </div>
+        <div class="profession-why">
+            I excel more on <span class="highlight">PC Hardware and Network related tasks</span> rather than creating programs or websites. 
+            My passion aligns more to a field where <span class="highlight">coding is minimal</span> and it focuses more on
+            <span class="highlight">reading and comprehending</span> the written code itself.  
+            <span class="highlight">Understanding concepts, troubleshooting, and setup</span>
+            has always been my forte.
+        </div>
+    </div>
+</div>
+{% endblock %}

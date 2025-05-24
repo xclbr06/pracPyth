@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/loginReg_style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Register</h2>
+    <form method="post" action="{{ url_for('register') }}">
+        {% set messages = get_flashed_messages(with_categories=true) %}
+        
+        {% for category, message in messages %}
+            {% if category == 'first_name' and message == 'All fields are required!' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" value="{{ request.form.first_name or '' }}">
+        {% for category, message in messages %}
+            {% if category == 'first_name' and message != 'All fields are required!' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" value="{{ request.form.last_name or '' }}">
+        {% for category, message in messages %}
+            {% if category == 'last_name' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+
+        <label for="course">Course:</label>
+        <input type="text" name="course" id="course" value="{{ request.form.course or '' }}">
+        {% for category, message in messages %}
+            {% if category == 'course' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+
+        <label for="section">Section:</label>
+        <select name="section" id="section">
+            <option value="">Select Section</option>
+            <option value="2A" {% if request.form.section == '2A' %}selected{% endif %}>2A</option>
+            <option value="2B" {% if request.form.section == '2B' %}selected{% endif %}>2B</option>
+            <option value="2C" {% if request.form.section == '2C' %}selected{% endif %}>2C</option>
+        </select>
+        {% for category, message in messages %}
+            {% if category == 'section' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" value="{{ request.form.email or '' }}">
+        {% for category, message in messages %}
+            {% if category == 'email' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+        {% for category, message in messages %}
+            {% if category == 'password' %}
+                <div class="message">{{ message }}</div>
+            {% endif %}
+        {% endfor %}
+
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+</div>
+{% endblock %}

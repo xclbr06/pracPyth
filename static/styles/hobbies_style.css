@@ -1,0 +1,279 @@
+body {
+    background: #0f1923;
+    color: #ece8e1;
+    font-family: 'Orbitron', Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: #1f2326;
+    border-bottom: 4px solid #ff4655;
+    padding: 0;
+}
+
+.hobbies-title {
+    text-align: center;
+    color: #ff4655;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+}
+
+.hobbies-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hobbies-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.hobby-radio {
+    display: none;
+}
+
+.hobby-card {
+    background: rgba(31, 35, 38, 0.95);
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(255,70,85,0.10);
+    width: 220px;
+    overflow: hidden;
+    transition: box-shadow 0.2s, border 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0;
+    text-align: center;
+}
+
+.hobby-card:hover,
+.hobby-radio:focus + .hobby-card {
+    box-shadow: 0 8px 32px rgba(255,70,85,0.18);
+    border-color: #ff4655;
+}
+
+.hobby-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.hobby-label {
+    font-size: 1.2rem;
+    color: #ff4655;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem 0;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.hobby-details-group {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hobby-detail {
+    display: none;
+    padding: 2rem 2rem;
+    color: #ece8e1;
+    font-size: 1.1rem;
+    background: rgba(15,25,35,0.95);
+    border-radius: 14px;
+    box-shadow: 0 4px 24px rgba(255,70,85,0.10);
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+#hobby-games:checked ~ .hobby-details-group #detail-games,
+#hobby-movies:checked ~ .hobby-details-group #detail-movies,
+#hobby-gym:checked ~ .hobby-details-group #detail-gym {
+    display: block;
+}
+
+.highlight {
+    color: #ff4655;
+    font-weight: bold;
+}
+
+.hobby-video {
+    margin: 1.2rem auto 0.5rem auto;
+    border-radius: 10px;
+    background: #000;
+    max-width: 100%;
+    display: block;
+}
+
+.video-caption-above {
+    display: block;
+    color: #ece8e1;
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.video-caption-below {
+    display: block;
+    color: #ece8e1;
+    font-size: 1.05rem;
+    margin-top: 0.7rem;
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.highlight-link {
+    color: #ff4655;
+    font-weight: bold;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.highlight-link:hover,
+.highlight-link:focus {
+    color: #ece8e1;
+    background: #ff4655;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 0 0.3em;
+}
+
+.peak-rank-info {
+    margin-top: 1.2rem;
+    text-align: center;
+}
+
+.peak-rank-label {
+    color: #ece8e1;
+    font-size: 1.08rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.peak-rank-logo {
+    display: block;
+    margin: 0.5rem auto 0 auto;
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.movies-desc {
+    color: #ece8e1;
+    font-size: 1.08rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.movies-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.movie-img-card {
+    background: rgba(31, 35, 38, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(255,70,85,0.10);
+    width: 110px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+    border: 2px solid transparent;
+    padding: 10px;
+    text-align: center;
+    cursor: default;
+}
+
+.movie-img-card:hover {
+    box-shadow: 0 8px 32px rgba(255,70,85,0.18);
+    border-color: #ff4655;
+    transform: translateY(-4px) scale(1.04);
+}
+
+.movie-img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.movie-title {
+    font-size: 0.98rem;
+    color: #ff4655;
+    font-weight: bold;
+    margin: 0.7rem 0 0.7rem 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 0.3rem;
+    min-height: 2.2em;
+}
+
+.gym-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.gym-img-card {
+    background: rgba(31, 35, 38, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(255,70,85,0.10);
+    width: 140px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+    border: 2px solid transparent;
+    padding: 20px;
+    text-align: center;
+    cursor: default;
+}
+
+.gym-img-card:hover {
+    box-shadow: 0 8px 32px rgba(255,70,85,0.18);
+    border-color: #ff4655;
+    transform: translateY(-4px) scale(1.04);
+}
+
+.gym-title {
+    font-size: 0.98rem;
+    color: #ff4655;
+    font-weight: bold;
+    margin: 0.7rem 0 0.7rem 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 0 0.3rem;
+    min-height: 2.2em;
+}
+
+.gym-subtitle {
+    font-size: 0.98rem;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-align: center;
+    min-height: 2.2em;
+}
+
