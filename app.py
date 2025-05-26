@@ -60,12 +60,10 @@ def register():
         email = request.form['email'].strip()
         password = request.form['password']
 
-        # Validation: all fields required
         if not all([first_name, last_name, course, section, email, password]):
             flash('All fields are required!', 'first_name')
             return render_template('register.html', hide_nav_footer=True)
 
-        # Email format validation (simple)
         if '@' not in email or '.' not in email:
             flash('Invalid email format!', 'email')
             return render_template('register.html', hide_nav_footer=True)
